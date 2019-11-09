@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_type=1);
+declare(strict_types=1);
 
 spl_autoload_register(function($className){
 	$file = __DIR__ . DIRECTORY_SEPARATOR . "src". DIRECTORY_SEPARATOR . "$className.php";

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Test Documentation</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-variant-ligatures: common-ligatures;
+                font-kerning: normal;
+                margin-left: 2em;
+            }
+
+            body > ul > li {
+                font-family: Source Serif Pro, PT Sans, Trebuchet MS, Helvetica, Arial;
+                font-size: 2em;
+            }
+
+            h2 {
+                font-family: Tahoma, Helvetica, Arial;
+                font-size: 3em;
+            }
+
+            ul {
+                list-style: none;
+                margin-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="SluggerTest">Slugger</h2>
+        <ul>
+            <li style="color: #555753;">✓ Slugify with data set "identity"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "case conversion"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "simple spaces"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "leading and trailing separators removal"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "simple spaces with leading and trailing separators"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "multiple separators in various positions"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "french characters transliteration"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "emoji conversion"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "special characters conversion"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "leading and trailing special characters removal"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "html tags stripping"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "more html tags stripping"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "html entities conversion"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "html entities conversion and tags removal"</li>
+            <li style="color: #ef2929;">❌ Slugify with data set "full example"</li>
+        </ul>
+    </body>
+</html>

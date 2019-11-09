@@ -1,4 +1,8 @@
 <?php 
+/**
+ * TEST:
+ * phpunit --bootstrap bootstrap.php --testdox ./tests/FloatCalculatorTest.php
+ */
 use PHPUnit\Framework\TestCase;
 
 class FloatCalculatorTest extends TestCase
@@ -14,10 +18,10 @@ class FloatCalculatorTest extends TestCase
     public function addProvider()
     {
         return [
-            [0, 0, 0],
-            [0, 1, 1],
-            [1, 0, 1],
-            [1, 1, 2]
+            "adding zero " =>[0, 0, 0],
+           "adding zero to one "=> [0, 1, 1],
+           "adding one to zero "=> [1, 0, 1],
+           "addinf one to one " => [1, 1, 2]
         ];
     }
      /**
@@ -31,10 +35,10 @@ class FloatCalculatorTest extends TestCase
     public function substractProvider()
     {
         return [
-            [0, 0, 0],
-            [0, 1, -1],
-            [1, 0, 1],
-            [1, 1, 0]
+            "Subtracting zero form zero"=>[0,0,0],
+            "Subtracting zero from one"=>[0,1,-1],
+            "Subtracting one from zero"=>[1, 0,1],
+            "Subtracting one form one"=> [1,1,0]
         ];
     }
      /**
@@ -48,10 +52,10 @@ class FloatCalculatorTest extends TestCase
     public function multiplyProvider()
     {
         return [
-            [0, 0, 0],
-            [0, 1, 0],
-            [1, 0, 0],
-            [1, 1, 1]
+            "multiplying zero by zero"=>[0, 0, 0],
+            "multiplying zero by one "=>[0, 1, 0],
+            "multiplying one by zero "=>[1, 0, 0],
+            "multiplying one  by one "=>[1, 1, 1]
         ];
     }
      /**
@@ -65,8 +69,8 @@ class FloatCalculatorTest extends TestCase
     public function divideProvider()
     {
         return [
-            [4, 2, 2],
-            [20,2 , 10]
+            "divading four by two"=>[4, 2, 2],
+            "divading twenty by two"=>[20,2,10]
         ];
     }
  
@@ -90,22 +94,30 @@ class FloatCalculatorTest extends TestCase
     public function modulusProvider()
     {
         return [
-            [4, 2, 0],
-            [20,2 , 0]
+            " four modulus two "=>[4, 2, 0],
+            "twenty modulus two "=>[20,2 , 0]
         ];
     }
+
     public function testModulusByZero()
     {
         $this->expectException(RunTimeException::class);
         FLoatCalculator::modulus(5,0);
-    
-
-
     }
-    public function testSum(float ...$floats,float $expected)
+
+    /**
+     * @dataProvider sumProvider
+     */
+    public function testSum(float $expected,float ...$floats)
     {
-        
+        $this->assertSame($expected,FloatCalculator::sum(...$floats));
     }
+
+    public function sumProvider()
+    {
+        return ["the sum of two plus two  plus zero  plus  zero "=>[4,2,0,2,0]];
+    }
+    
 
 
 }

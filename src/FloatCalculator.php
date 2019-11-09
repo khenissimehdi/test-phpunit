@@ -40,7 +40,7 @@ class FloatCalculator {
         foreach ($floats as $single_floats) {
             $result += $single_floats;
         }
-        return $acc;
+        return $result;
 
     }
 
