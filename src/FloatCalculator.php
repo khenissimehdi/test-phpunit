@@ -1,17 +1,22 @@
 <?php 
 
-class FloatCalculator {
+class FloatCalculator
+ {
 
-    static public function add(float $first_float,float $second_float):float{
+    static public function add(float $first_float,float $second_float):float
+    {
         return  $first_float + $second_float;
+
     }
 
-    static public function subtract(float $first_float , float $second_float):float {
+    static public function subtract(float $first_float , float $second_float):float 
+    {
         return  $first_float - $second_float;
 
     }
 
-    static public function  multiply(float $first_float,float $second_float):float {
+    static public function  multiply(float $first_float,float $second_float):float 
+    {
         return  $first_float * $second_float;
 
     }
@@ -35,7 +40,8 @@ class FloatCalculator {
 
     }
 
-     static public function  sum(float ...$floats):float {
+     static public function  sum(float ...$floats):float 
+     {
             $result= 0;
         foreach ($floats as $single_floats) {
             $result += $single_floats;
@@ -56,3 +62,7 @@ class FloatCalculator {
     // exmple : createuser depend d'une autre classe donc on va crete fake object 
     //test integration links btw methodes 
     // test input of web 
+
+/**
+ * PHP-FIG
+ *  */ 
