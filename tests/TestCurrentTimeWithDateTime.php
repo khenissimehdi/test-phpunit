@@ -64,4 +64,32 @@ class CurrentTimeWithDateTime extends TestCase
 
 
    }
+/**
+     * @dataProvider providerGetTime
+     */
+    public function testGetTime(int $time): void
+    {
+        
+        $currentTimeMock = $this->createPartialMock(CurrentTimeRefactoredWithConstants::class, ['getTimestamp']);
+       
+        $currentTimeMock->method('getTimestamp')
+            ->willReturn(strtotime("$time:00:00"));
+
+      
+        $currentTimeMock->expects($this->once())
+            ->method('getTimeStamp');
+
+        $this->assertSame($time, $currentTimeMock->getTime());
+    }
+
+    public function providerGetTime()
+    {
+        return [
+             [0],
+            [3],
+            [6],
+            [12],
+            [23],
+        ];
+    }
    }
