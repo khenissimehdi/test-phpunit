@@ -1,30 +1,36 @@
 <?php
-class CurrentTimeRefactored
+class CurrentTimeRefactoredWithConstants
 {
+    private const NIGHT = 1;
+    private const MORNING = 2;
+    private const  NOON = 3;
+    private const EVENING = 4;
+
+
     public function getTime():int
     {
         return strftime("%H",$this->getTimestamp());
 
     }
-    public function getTimeOfDay():string
+    public function getTimeOfDay():int
     {
-        $chaine="";
+        $chaine=0;
         $method=$this->getTime();
         if($method<6)
         {
-            $chaine="Night";
+            $chaine=1;
         }
         if((($method)>=6) and ($method<12))
         {
-            $chaine="Morning";
+            $chaine=2;
         }
         if(($method>=12)and ($method<18))
         {
-            $chaine="Noon";
+            $chaine=3;
         }
         if(($method>=18)and ($method<24))
         {
-            $chaine="Evening";
+            $chaine=4;
         }
         return $chaine;
 

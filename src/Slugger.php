@@ -1,7 +1,6 @@
 <?php 
 class Slugger {
 
-  
     public function slugify(string $text):string{
         $text = strip_tags($text);
         $text = html_entity_decode($text);
@@ -15,7 +14,6 @@ class Slugger {
 
         return $text;
     }
-
 
 
 
